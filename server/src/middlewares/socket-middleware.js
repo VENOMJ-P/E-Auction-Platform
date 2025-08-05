@@ -3,11 +3,6 @@ import User from "../models/user.model.js";
 
 export const socketAuth = async (socket, next) => {
   try {
-    console.log(
-      "Socket Auth",
-      socket.handshake.auth.token,
-      socket.handshake.headers.cookie?.split("jwt=")[1]?.split(";")[0]
-    );
     const token =
       socket.handshake.auth.token ||
       socket.handshake.headers.cookie?.split("jwt=")[1]?.split(";")[0];

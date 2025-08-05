@@ -4,7 +4,6 @@ import { errorResponse } from "../utils/response.handler.js";
 
 export const protectRoute = async (req, res, next) => {
   try {
-    console.log("Protect Route Middleware", req.cookies.jwt);
     const token = req.cookies.jwt;
     if (!token) {
       return errorResponse(res, 401, "Unauthorized - No Token Provided");
