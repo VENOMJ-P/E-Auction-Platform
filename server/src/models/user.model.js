@@ -47,6 +47,7 @@ userSchema.methods.genJwt = function generate(res) {
     sameSite: "strict",
     secure: NODE_ENV !== "development",
   });
+
   return token;
 };
 
